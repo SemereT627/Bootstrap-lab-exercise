@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services</title>
+    <title>About</title>
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/font/css/all.css">
     <style>
@@ -16,7 +16,7 @@
 
 <body>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
-        <a href="Index.html" class="navbar-brand"><i class="fa fa-home"></i></a>
+        <a href="index.html" class="navbar-brand"><i class="fa fa-home"></i></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#colNav"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -24,68 +24,82 @@
         <div class="collapse navbar-collapse" id="colNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a href="Services.html" class="nav-link">Service</a>
+                    <a href="services.html" class="nav-link">Service</a>
                 </li>
                 <li class="nav-item"> 
-                    <a href="Buy.html" class="nav-link">Buy</a>
+                    <a href="buy.html" class="nav-link">Buy</a>
                 </li>
                 <li class="nav-item">
-                    <a href="About.html" class="nav-link">About</a>
+                    <a href="about.html" class="nav-link">About</a>
                 </li>
             </ul>
 
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a href="Login.html" class="nav-link">Login</a>
+                    <a href="login.html" class="nav-link">Login</a>
                 </li>
                 <li class="nav-item">
-                    <a href="Register.html" class="nav-link">Register</a>
+                    <a href="register.html" class="nav-link">Register</a>
                 </li>
             </ul>
         </div>
     </nav>
+    <div class="container-fluid">
+        <h3 class="display-4">
+            Usage of Flexbox
+        </h3>
+        <div style="font-size: 20px;">
+            <p>
+                Flexbox is a CSS display type designed to help craft CSS layouts much easier.
+                It works great responsively. <br>
+                A Flex property is a flexible property of flexible items.
+                If an item is not flexible, then flex has no effect on it.
+                There are three things need to know while using Flexbox. These are,
+                <ul style="list-style-type: square;">
+                    <li>Flex-grow</li>
+                    <li>Flex-shrink</li>
+                    <li>Flex-basis</li>
+                </ul>
+            </p>
+            <p>
+                <h5>Flex-grow</h5>
+                A flex-grow property is a property that specifies how much the item will grow relative to the rest of
+                the flexible items.
+                It is basically aspects a ratio of value with respect to other flex items. Suppose we want three flex
+                items to be in a menu. The first one with flex-grow 1, the second one flex-grow 2 and the third one is
+                flex-grow 3. what it meant here is that the second item will grow a double size respect to the first one
+                and the third grows triple times of the 1<sup>st</sup> flex item. <br>
+                Note: If flex-grow set to 1 it gives equal ratio to the flex items.
+                <img class="img-fluid" src="assets/images/flexgrow.PNG" alt="">
+            </p>
+            <p>
+                <h5>Flex-shrink</h5>
+                It is the opposite of the flex-grow property. Here, the larger value of flex-shrink is the quicker to
+                shrink and the smaller value of flex-shrink is the later it shrink. <br>
+                <img class="img-fluid" src="assets/images/flexshrink.PNG" alt="">
+            </p>
 
+            <p>
+                <h5>Flex-basis</h5>
+                This property gives a starting width to the flex item. It is like min-width.
+                <img class="img-fluid" src="assets/images/flexbasis.PNG" alt="">
+            </p>
 
-
-    <p class="display-4">Shoe Expo</p>
-    <hr class="mx-auto">
-    <div class="container-fluid ml-auto mt-2 mb-4">
-        <div class="row text-center">
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="assets/images/download (1).jpg" class="card-img-top img-fluid" alt="">
-                    <div class="card-body">
-                        <h5 class="card-title">Sneaker Shoe</h5>
-                        <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum expedita
-                            similique et modi libero aut natus quam, laudantium ipsum tempora, sunt placeat fugit
-                            asperiores ab cumque iusto nostrum deserunt facilis.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="assets/images/download (3).jpg" class="card-img-top img-fluid" alt="">
-                    <div class="card-body">
-                        <h5 class="card-title">Sneaker Shoe</h5>
-                        <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum expedita
-                            similique et modi libero aut natus quam, laudantium ipsum tempora, sunt placeat fugit
-                            asperiores ab cumque iusto nostrum deserunt facilis.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="assets/images/download.jpg" class="card-img-top img-fluid" alt="">
-                    <div class="card-body">
-                        <h5 class="card-title">Sneaker Shoe</h5>
-                        <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum expedita
-                            similique et modi libero aut natus quam, laudantium ipsum tempora, sunt placeat fugit
-                            asperiores ab cumque iusto nostrum deserunt facilis.</p>
-                    </div>
-                </div>
-            </div>
+            <p>
+                Here is some other property need to know. It is the flex-wrap property.
+                <h5>Flex-wrap</h5>
+                It is a flex property that helps to wrap a flex item when the screen resizes.
+                If the flex-wrap property is not used a content is displayed horizontally and it will have a horizontal
+                scroll bar when screen is small. Since this causes our site to be less responsive, the flex-wrap
+                property helps us in this situation.<br>
+                <img class="img-fluid" src="assets/images/flexwrap.PNG" alt="">
+            </p>
         </div>
     </div>
+
+
+
+
     <footer>
         <div class="row mx-auto" style="background-color:rgb(4, 12, 44);">
             <div class="py-4 px-4 col-md-5" style="color: white;">
@@ -117,12 +131,6 @@
         </div>
 
     </footer>
-
-
-
-
-
-
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
         crossorigin="anonymous"></script>
