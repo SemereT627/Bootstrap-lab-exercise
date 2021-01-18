@@ -1,0 +1,11 @@
+.img {
+    border-radius: 5px;
+}
+
+.list-unstyled li a {
+    text-decoration: none;
+}
+
+#lists a {
+    text-decoration: none;
+}

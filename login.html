@@ -7,81 +7,66 @@
     <title>Home</title>
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/font/css/all.css">
-    <style>
-        #lists a {
-            text-decoration: none;
-        }
-       
-    </style>
+    <link rel="stylesheet" href="assets/css/flex.css">
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
-        <a href="index.html" class="navbar-brand"><i class="fa fa-home"></i></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#colNav"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="colNav">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a href="services.html" class="nav-link">Service</a>
-                </li>
-                <li class="nav-item"> 
-                    <a href="buy.html" class="nav-link">Buy</a>
-                </li>
-                <li class="nav-item">
-                    <a href="about.html" class="nav-link">About</a>
-                </li>
-            </ul>
 
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a href="login.html" class="nav-link">Login</a>
-                </li>
-                <li class="nav-item">
-                    <a href="register.html" class="nav-link">Register</a>
-                </li>
-            </ul>
-        </div>
+    <nav>
+        <ul class="menu">
+            <li class="logo"><a href="index.html"><i class="fa fa-home fa-lg"></i></a></li>
+            <li class="item"><a href="services.html">Service</a></li>
+            <li class="item"><a href="buy.html">Buy</a></li>
+            <li class="item "><a href="about.html">About</a></li>
+            <li class="item toLeft"></li>
+            <li class="item"><a href="login.html">Login</a></li>
+            <li class="item"><a href="register.html">Register</a></li>
+            <li class="toggle"><a href="#"><i class="fas fa-bars"></i></a></li>
+        </ul>
     </nav>
+
 
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-3">
+            <div class="col-md-4">
 
             </div>
-            <div class="col-md-6">
-                <h3 class="display-4 mt-4 text-center">Login Page</h3>
+            <div class="col-md-4 bg-light">
+                <h3 class="display-4 mt-4 text-center">Login <i class="fa fa-user"></i></h3>
                 <form action="">
                     <fieldset class="form-group mt-4">
                         <div class="row">
                             <legend class="col-form-label col-sm-2 pt-0">
-                                                
+
                             </legend>
                         </div>
 
                         <div class="form-group row">
-                            <label for="username" class="col-form-label col-sm-2">User Name</label>
-                            <div class="col-sm-10"><input type="text" placeholder="User name" pattern="{4,20}" id="username" required class="form-control"></div>
+                            <label for="username" class="col-form-label col-sm-3">User Name</label>
+                            <div class="col-sm-9"><input type="text" placeholder="User name" pattern="{4,20}"
+                                    id="username" required class="form-control"></div>
                         </div>
                         <div class="form-group row">
-                            <label for="password" class="col-form-label col-sm-2">Password</label>
-                            <div class="col-sm-10"><input type="password" placeholder="Password" id="password" required class="form-control"></div>
+                            <label for="password" class="col-form-label col-sm-3">Password</label>
+                            <div class="col-sm-9"><input type="password" placeholder="Password" id="password" required
+                                    class="form-control"></div>
                         </div>
                         <div class="form-group row mb-5">
                             <div class="ml-auto col-sm-4">
-                                <input type="submit" class="form-control bg-primary text-white" name="" id="">
+                                <input type="submit" class="form-control bg-primary text-white" name="" id=""
+                                    value="Login">
                             </div>
                         </div>
                     </fieldset>
                 </form>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-4">
 
             </div>
         </div>
     </div>
+
+
     <footer>
         <div class="row mx-auto " style="background-color:rgb(4, 12, 44);">
             <div class="py-4 px-4 col-md-5" style="color: white;">
@@ -94,7 +79,7 @@
             </div>
             <div class="py-4 col-md-3" style="color: white;">
                 <h3>Links</h3>
-                <ul id="lists">
+                <ul class="list-unstyled">
                     <li><a href="">Lorem ipsum</a></li>
                     <li><a href="">Nam mauris velit</a></li>
                     <li><a href="">Etiam vitae mauris</a></li>
@@ -116,16 +101,42 @@
 
     </footer>
 
+    <script>
+        const toggle = document.querySelector(".toggle");
+        const menu = document.querySelector(".menu");
+        const items = document.querySelectorAll(".item");
+
+        /* Toggle mobile menu */
+        function toggleMenu() {
+            if (menu.classList.contains("active")) {
+                menu.classList.remove("active");
+                toggle.querySelector("a").innerHTML = "<i class='fas fa-bars'></i>";
+            } else {
+                menu.classList.add("active");
+                toggle.querySelector("a").innerHTML = "<i class='fas fa-bars'></i>";
+            }
+        }
+
+        /* Event Listeners */
+        toggle.addEventListener("click", toggleMenu, false);
+        for (let item of items) {
+            if (item.querySelector(".submenu")) {
+                item.addEventListener("click", toggleItem, false);
+            }
+            item.addEventListener("keypress", toggleItem, false);
+        }
+        document.addEventListener("click", closeSubmenu, false);
+    </script>
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-        crossorigin="anonymous"></script>
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-        crossorigin="anonymous"></script>
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
 </body>
 
 </html>
